@@ -1,10 +1,17 @@
-# Byte-compiled / optimized / DLL files
+led / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
 
 # C extensions
 *.so
+
+# Custom ~nitish
+.env39/
+.env/
+aida/
+data/
+models/*
 
 # Distribution / packaging
 .Python
