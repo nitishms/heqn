@@ -134,10 +134,10 @@ def train_model(model, X_train, y_train, epochs=10, batch_size=32):
 
 def main():
     # FIXME: Change range to (1, 11). Using only batch 1 for now
-    BATCH_NUMS = range(1, 2)
+    BATCH_NUMS = range(1, 4)
 
     # Prepare data
-    X, y, image_paths = prepare_data(BATCH_NUMS)
+    X, y, _ = prepare_data(BATCH_NUMS) # Here, `_` => `image_paths`
 
     print(f"[INFO] Shape of X: {X.shape}")
     print(f"[INFO] Length of y: {len(y)}")
@@ -163,10 +163,10 @@ def main():
     train_model(model, X, y_one_hot)
     
     # Save the model
-    model.save('aida_vit_model.keras')
+    model.save('../models/aida_vit_model.keras')
     
     # Save the label mapping
-    with open('label_mapping.json', 'w') as f:
+    with open('../models/label_mapping.json', 'w') as f:
         json.dump(label_to_index, f)
 
 if __name__ == '__main__':
